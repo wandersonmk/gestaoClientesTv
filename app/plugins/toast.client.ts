@@ -1,9 +1,9 @@
-import Toast, { POSITION } from "vue-toastification"
+import Toast from "vue-toastification"
 import "vue-toastification/dist/index.css"
 
 export default defineNuxtPlugin((nuxtApp) => {
   nuxtApp.vueApp.use(Toast, {
-    position: POSITION.TOP_RIGHT,
+    position: 'top-right',
     timeout: 4000,
     closeOnClick: true,
     pauseOnFocusLoss: true,

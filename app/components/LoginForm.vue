@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref, computed } from 'vue'
-import { useToast } from 'vue-toastification'
+import Toastification from 'vue-toastification'
+const { useToast } = Toastification
 
 const email = ref('')
 const password = ref('')

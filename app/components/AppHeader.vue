@@ -125,7 +125,8 @@
 </template>
 
 <script setup lang="ts">
-import { useToast } from 'vue-toastification'
+import Toastification from 'vue-toastification'
+const { useToast } = Toastification
 
 const { signOut } = useAuth()
 const toast = useToast()
