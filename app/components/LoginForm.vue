@@ -23,14 +23,14 @@ const emailError = computed(() => {
 
 async function handleLogin() {
   if (!email.value || !password.value) {
-    toast.warning('Preencha todos os campos')
+    toast?.warning('Preencha todos os campos')
     return
   }
   
   // Validação de email
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
   if (!emailRegex.test(email.value)) {
-    toast.error('Digite um email válido')
+    toast?.error('Digite um email válido')
     return
   }
   
@@ -49,7 +49,7 @@ async function handleLogin() {
       email: user.value?.email 
     })
     
-    toast.success('Login realizado com sucesso!')
+    toast?.success('Login realizado com sucesso!')
     
     console.log('LoginForm: Tentando navegar para /')
     await navigateTo('/')
@@ -58,7 +58,7 @@ async function handleLogin() {
     console.error('LoginForm: Erro no login:', error)
     // Mostra erro via toast
     if (errorMessage.value) {
-      toast.error(errorMessage.value)
+      toast?.error(errorMessage.value)
     }
   }
 }

@@ -47,25 +47,25 @@ const passwordStrengthError = computed(() => {
 
 async function handleRegister() {
   if (!name.value || !companyName.value || !email.value || !password.value || !confirmPassword.value) {
-    toast.warning('Preencha todos os campos')
+    toast?.warning('Preencha todos os campos')
     return
   }
   
   // Validação de email
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
   if (!emailRegex.test(email.value)) {
-    toast.error('Digite um email válido')
+    toast?.error('Digite um email válido')
     return
   }
   
   // Validação de confirmação de senha
   if (password.value !== confirmPassword.value) {
-    toast.error('As senhas não coincidem')
+    toast?.error('As senhas não coincidem')
     return
   }
   
   if (password.value.length < 6) {
-    toast.error('A senha deve ter pelo menos 6 caracteres')
+    toast?.error('A senha deve ter pelo menos 6 caracteres')
     return
   }
   
@@ -79,12 +79,12 @@ async function handleRegister() {
     
     // Sucesso: mostrar modal de confirmação de email
     showEmailModal.value = true
-    toast.success('Conta criada com sucesso!')
+    toast?.success('Conta criada com sucesso!')
     
   } catch (error) {
     // Erro já é tratado no composable e mostrado via errorMessage
     if (errorMessage.value) {
-      toast.error(errorMessage.value)
+      toast?.error(errorMessage.value)
     }
     console.error('Erro no cadastro:', error)
   }

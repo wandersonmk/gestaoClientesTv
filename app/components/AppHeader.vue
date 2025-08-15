@@ -134,11 +134,11 @@ const mobileMenuOpen = ref(false)
 const handleLogout = async () => {
   try {
     await signOut()
-    toast.success('Deslogado com sucesso!')
+    toast?.success('Deslogado com sucesso!')
     // Redireciona para a página de login após logout
     await navigateTo('/login')
   } catch (error) {
-    toast.error('Erro ao fazer logout')
+    toast?.error('Erro ao fazer logout')
   }
 }
 </script>

@@ -19,4 +19,12 @@ export default defineNuxtPlugin((nuxtApp) => {
     maxToasts: 5,
     newestOnTop: true
   })
+  // Injetar a instância global exposta pelo plugin ($toast)
+  const globalToast = (nuxtApp.vueApp.config.globalProperties as any)?.$toast
+  nuxtApp.provide('toast', globalToast ?? {
+    success: () => {},
+    error: () => {},
+    info: () => {},
+    warning: () => {},
+  })
 })
