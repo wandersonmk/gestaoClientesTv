@@ -65,7 +65,9 @@ async function handleLogin() {
 </script>
 
 <template>
-  <div class="w-full max-w-sm rounded-xl border border-border bg-secondary p-6 shadow">
+  <div class="w-full max-w-sm">
+    <!-- Card principal -->
+    <div class="rounded-xl border border-border/50 bg-secondary p-6 shadow-lg backdrop-blur-sm">
     <div class="space-y-1">
       <h2 class="text-lg font-semibold">Faça login na plataforma</h2>
       <p class="text-sm text-muted-foreground">Acesse sua conta com email e senha</p>
@@ -105,7 +107,10 @@ async function handleLogin() {
         <span v-else>Entrar</span>
       </AppButton>
     </form>
+    </div>
   </div>
 </template>
+
+
 
 

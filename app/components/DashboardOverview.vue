@@ -4,21 +4,23 @@
       <!-- Título da página -->
       <div class="mb-8">
         <h1 class="text-3xl font-bold text-foreground mb-2">Dashboard</h1>
-        <p class="text-muted-foreground">Visão geral do seu negócio</p>
+        <p class="text-gray-400">Visão geral do seu negócio</p>
       </div>
 
       <!-- Cards de métricas -->
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
         <!-- Card Pedidos Hoje -->
-        <div class="bg-card text-card-foreground rounded-lg border border-border shadow-sm p-6">
-          <div class="flex items-center justify-between">
+        <div class="relative bg-gradient-to-br from-card via-blue-950/10 to-card text-card-foreground rounded-lg border border-blue-800/20 shadow-sm hover:shadow-md hover:shadow-blue-500/10 transition-all duration-300 p-6 group overflow-hidden">
+          <!-- Efeito de brilho sutil -->
+          <div class="absolute inset-0 bg-gradient-to-r from-transparent via-blue-500/8 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+          <div class="relative z-10 flex items-center justify-between">
             <div>
-              <p class="text-sm text-muted-foreground mb-1">Pedidos Hoje</p>
+              <p class="text-sm text-gray-400 mb-1">Pedidos Hoje</p>
               <p class="text-2xl font-bold text-foreground">{{ metrics.pedidosHoje }}</p>
               <p class="text-xs text-green-600 mt-1">+12% desde ontem</p>
             </div>
-            <div class="w-12 h-12 bg-blue-100 dark:bg-blue-900 rounded-lg flex items-center justify-center">
-              <svg class="w-6 h-6 text-blue-600 dark:text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div class="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-lg flex items-center justify-center shadow-lg">
+              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"/>
               </svg>
             </div>
@@ -26,15 +28,17 @@
         </div>
 
         <!-- Card Clientes Novos -->
-        <div class="bg-card text-card-foreground rounded-lg border border-border shadow-sm p-6">
-          <div class="flex items-center justify-between">
+        <div class="relative bg-gradient-to-br from-card via-emerald-950/10 to-card text-card-foreground rounded-lg border border-emerald-800/20 shadow-sm hover:shadow-md hover:shadow-emerald-500/10 transition-all duration-300 p-6 group overflow-hidden">
+          <!-- Efeito de brilho sutil -->
+          <div class="absolute inset-0 bg-gradient-to-r from-transparent via-emerald-500/8 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+          <div class="relative z-10 flex items-center justify-between">
             <div>
-              <p class="text-sm text-muted-foreground mb-1">Clientes Novos</p>
+              <p class="text-sm text-gray-400 mb-1">Clientes Novos</p>
               <p class="text-2xl font-bold text-foreground">{{ metrics.clientesNovos }}</p>
               <p class="text-xs text-green-600 mt-1">+5% esta semana</p>
             </div>
-            <div class="w-12 h-12 bg-green-100 dark:bg-green-900 rounded-lg flex items-center justify-center">
-              <svg class="w-6 h-6 text-green-600 dark:text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div class="w-12 h-12 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-lg flex items-center justify-center shadow-lg">
+              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197m13.5-9a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0z"/>
               </svg>
             </div>
@@ -42,15 +46,17 @@
         </div>
 
         <!-- Card Retorno de Clientes -->
-        <div class="bg-card text-card-foreground rounded-lg border border-border shadow-sm p-6">
-          <div class="flex items-center justify-between">
+        <div class="relative bg-gradient-to-br from-card via-amber-950/10 to-card text-card-foreground rounded-lg border border-amber-800/20 shadow-sm hover:shadow-md hover:shadow-amber-500/10 transition-all duration-300 p-6 group overflow-hidden">
+          <!-- Efeito de brilho sutil -->
+          <div class="absolute inset-0 bg-gradient-to-r from-transparent via-amber-500/8 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+          <div class="relative z-10 flex items-center justify-between">
             <div>
-              <p class="text-sm text-muted-foreground mb-1">Retorno de Clientes</p>
+              <p class="text-sm text-gray-400 mb-1">Retorno de Clientes</p>
               <p class="text-2xl font-bold text-foreground">{{ metrics.retornoClientes }}%</p>
               <p class="text-xs text-yellow-600 mt-1">+3% este mês</p>
             </div>
-            <div class="w-12 h-12 bg-yellow-100 dark:bg-yellow-900 rounded-lg flex items-center justify-center">
-              <svg class="w-6 h-6 text-yellow-600 dark:text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div class="w-12 h-12 bg-gradient-to-br from-amber-500 to-amber-600 rounded-lg flex items-center justify-center shadow-lg">
+              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"/>
               </svg>
             </div>
@@ -58,15 +64,17 @@
         </div>
 
         <!-- Card Faturamento -->
-        <div class="bg-card text-card-foreground rounded-lg border border-border shadow-sm p-6">
-          <div class="flex items-center justify-between">
+        <div class="relative bg-gradient-to-br from-card via-purple-950/10 to-card text-card-foreground rounded-lg border border-purple-800/20 shadow-sm hover:shadow-md hover:shadow-purple-500/10 transition-all duration-300 p-6 group overflow-hidden">
+          <!-- Efeito de brilho sutil -->
+          <div class="absolute inset-0 bg-gradient-to-r from-transparent via-purple-500/8 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+          <div class="relative z-10 flex items-center justify-between">
             <div>
-              <p class="text-sm text-muted-foreground mb-1">Faturamento</p>
+              <p class="text-sm text-gray-400 mb-1">Faturamento</p>
               <p class="text-2xl font-bold text-foreground">R$ {{ metrics.faturamento.toLocaleString('pt-BR') }}</p>
               <p class="text-xs text-green-600 mt-1">+18% este mês</p>
             </div>
-            <div class="w-12 h-12 bg-purple-100 dark:bg-purple-900 rounded-lg flex items-center justify-center">
-              <svg class="w-6 h-6 text-purple-600 dark:text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div class="w-12 h-12 bg-gradient-to-br from-purple-500 to-purple-600 rounded-lg flex items-center justify-center shadow-lg">
+              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"/>
               </svg>
             </div>

@@ -46,7 +46,7 @@
         <!-- Texto central -->
         <div class="absolute inset-0 flex flex-col items-center justify-center">
           <div class="text-4xl font-bold text-foreground">{{ displayTotal }}</div>
-          <div class="text-xs text-muted-foreground uppercase tracking-wide font-medium">PEDIDOS TOTAIS</div>
+          <div class="text-[10px] text-gray-400 uppercase tracking-wide font-medium">PEDIDOS TOTAIS</div>
         </div>
       </div>
     </div>
@@ -54,7 +54,7 @@
     <!-- Barra de Progresso Mensal -->
     <div>
       <div class="flex justify-between text-sm mb-2">
-        <span class="text-muted-foreground uppercase tracking-wide">Limite Mensal</span>
+        <span class="text-gray-400 uppercase tracking-wide">Limite Mensal</span>
         <span class="text-foreground font-medium">{{ monthlyUsed }}/{{ monthlyLimit }}</span>
       </div>
       <div class="relative h-3 bg-muted rounded-full overflow-hidden">
@@ -68,9 +68,8 @@
           :style="{ left: `calc(${monthlyPercentage}% - 8px)` }"
         ></div>
       </div>
-      <div class="flex justify-between text-xs text-muted-foreground mt-2">
-        <span>0</span>
-        <span>{{ monthlyLimit }} pedidos/mês</span>
+      <div class="flex justify-center text-xs text-gray-400 mt-2">
+        <span>O seu plano permite {{ monthlyLimit }} pedidos/mês</span>
       </div>
     </div>
   </div>
