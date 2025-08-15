@@ -1,14 +1,13 @@
 <script setup lang="ts">
 import { ref, computed } from 'vue'
-import Toastification from 'vue-toastification'
-const { useToast } = Toastification
 
 const name = ref('')
 const companyName = ref('')
 const email = ref('')
 const password = ref('')
 const confirmPassword = ref('')
-const toast = useToast()
+const { $toast } = useNuxtApp()
+const toast = $toast
 const showEmailModal = ref(false)
 
 const { signUp, isLoading, errorMessage } = useAuth()
