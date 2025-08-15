@@ -127,8 +127,10 @@
 <script setup lang="ts">
 
 const { signOut } = useAuth()
-const { $toast } = useNuxtApp()
-const toast = $toast
+let toast: any
+onMounted(async () => {
+  toast = await useToastSafe()
+})
 const mobileMenuOpen = ref(false)
 
 const handleLogout = async () => {

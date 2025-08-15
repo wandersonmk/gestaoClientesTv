@@ -3,8 +3,10 @@ import { ref, computed } from 'vue'
 
 const email = ref('')
 const password = ref('')
-const { $toast } = useNuxtApp()
-const toast = $toast
+let toast: any
+onMounted(async () => {
+  toast = await useToastSafe()
+})
 
 const { signInWithEmailAndPassword, isLoading, errorMessage } = useAuth()
 

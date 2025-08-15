@@ -6,8 +6,10 @@ const companyName = ref('')
 const email = ref('')
 const password = ref('')
 const confirmPassword = ref('')
-const { $toast } = useNuxtApp()
-const toast = $toast
+let toast: any
+onMounted(async () => {
+  toast = await useToastSafe()
+})
 const showEmailModal = ref(false)
 
 const { signUp, isLoading, errorMessage } = useAuth()

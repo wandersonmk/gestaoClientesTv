@@ -21,10 +21,7 @@ export default defineNuxtPlugin((nuxtApp) => {
   })
   // Injetar a instância global exposta pelo plugin ($toast)
   const globalToast = (nuxtApp.vueApp.config.globalProperties as any)?.$toast
-  nuxtApp.provide('toast', globalToast ?? {
-    success: () => {},
-    error: () => {},
-    info: () => {},
-    warning: () => {},
-  })
+  if (globalToast) {
+    nuxtApp.provide('toast', globalToast)
+  }
 })
