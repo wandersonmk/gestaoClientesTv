@@ -1,6 +1,6 @@
 <template>
   <div class="bg-card text-card-foreground rounded-lg border border-border shadow-sm p-6">
-    <h3 class="text-lg font-semibold text-foreground mb-6">Pedidos Mensais</h3>
+    <h3 class="text-lg font-semibold text-foreground mb-6">Clientes Mensais</h3>
     
     <!-- Gráfico Circular Principal -->
     <div class="flex flex-col items-center mb-8">
@@ -46,7 +46,7 @@
         <!-- Texto central -->
         <div class="absolute inset-0 flex flex-col items-center justify-center">
           <div class="text-4xl font-bold text-foreground">{{ displayTotal }}</div>
-          <div class="text-[10px] text-gray-400 uppercase tracking-wide font-medium">PEDIDOS TOTAIS</div>
+          <div class="text-[10px] text-gray-400 uppercase tracking-wide font-medium">CLIENTES TOTAIS</div>
         </div>
       </div>
     </div>
@@ -69,15 +69,15 @@
         ></div>
       </div>
       <div class="flex justify-center text-xs text-gray-400 mt-2">
-        <span>O seu plano permite {{ monthlyLimit }} pedidos/mês</span>
+        <span>O seu plano permite {{ monthlyLimit }} clientes/mês</span>
       </div>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-// Dados do gráfico de pedidos
-const totalPedidos = 687
+// Dados do gráfico de clientes
+const totalClientes = 687
 const monthlyLimit = 1000
 const monthlyUsed = 687
 
@@ -101,7 +101,7 @@ const strokeDashoffset = computed(() => {
 
 // Função para animar os valores
 const animateProgress = () => {
-  // Animar círculo principal e total de pedidos
+  // Animar círculo principal e total de clientes
   const duration1 = 2000
   const startTime1 = Date.now()
   
@@ -111,7 +111,7 @@ const animateProgress = () => {
     const easeOut = 1 - Math.pow(1 - progress, 3)
     
     currentPercentage.value = easeOut * targetPercentage
-    displayTotal.value = Math.round(easeOut * totalPedidos)
+    displayTotal.value = Math.round(easeOut * totalClientes)
     
     if (progress < 1) {
       requestAnimationFrame(animate1)

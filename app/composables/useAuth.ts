@@ -1,4 +1,5 @@
 import type { Session, User } from '@supabase/supabase-js'
+import { translateError } from '~/utils/errorTranslations'
 
 export function useAuth() {
   let supabase: ReturnType<typeof useSupabaseClient>
@@ -8,13 +9,12 @@ export function useAuth() {
   } catch (error) {
     console.error('Erro ao inicializar Supabase:', error)
     // Return early with empty/error state if Supabase is not available
-    // Não mostra erro no frontend, apenas mantém estado deslogado
     const errorMessage = useState<string | null>('auth_error', () => null)
     return {
-      user: useState('auth_user', () => null),
-      session: useState('auth_session', () => null),
+      user: useState<User | null>('auth_user', () => null),
+      session: useState<Session | null>('auth_session', () => null),
       isAuthenticated: computed(() => false),
-      isLoading: useState('auth_loading', () => false),
+      isLoading: useState<boolean>('auth_loading', () => false),
       errorMessage,
       signInWithEmailAndPassword: async () => { 
         const translatedError = translateError('Service unavailable')

@@ -8,7 +8,11 @@ onMounted(async () => {
   toast = await useToastSafe()
 })
 
-const { signInWithEmailAndPassword, isLoading, errorMessage } = useAuth()
+const { signInWithEmailAndPassword, isLoading, errorMessage } = process.client ? useAuth() : {
+  signInWithEmailAndPassword: async () => {},
+  isLoading: ref(false),
+  errorMessage: ref(null)
+}
 
 // Validações em tempo real
 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
@@ -50,6 +54,12 @@ async function handleLogin() {
       hasUser: !!user.value,
       email: user.value?.email 
     })
+    
+    // Salvar email no localStorage para o sidebar
+    if (process.client && user.value?.email) {
+      localStorage.setItem('user_email', user.value.email)
+      console.log('LoginForm: Email salvo no localStorage:', user.value.email)
+    }
     
     toast?.success('Login realizado com sucesso!')
     

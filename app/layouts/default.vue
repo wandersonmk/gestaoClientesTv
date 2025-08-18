@@ -24,7 +24,6 @@
     
     <!-- Conteúdo principal -->
     <div class="relative z-10">
-      <AppHeader />
       <main>
         <slot />
       </main>

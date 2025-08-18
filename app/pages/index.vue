@@ -2,7 +2,7 @@
 // Aplica middleware de autenticação
 definePageMeta({
   middleware: 'auth',
-  layout: 'default'
+  layout: 'dashboard'
 })
 
 // Estado de carregamento

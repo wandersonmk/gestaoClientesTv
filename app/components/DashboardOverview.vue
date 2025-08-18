@@ -1,22 +1,21 @@
 <template>
-  <div class="container mx-auto px-4 py-8">
-    <div class="max-w-7xl mx-auto">
-      <!-- Título da página -->
-      <div class="mb-8">
-        <h1 class="text-3xl font-bold text-foreground mb-2">Dashboard</h1>
-        <p class="text-gray-400">Visão geral do seu negócio</p>
-      </div>
+  <div class="max-w-7xl mx-auto">
+    <!-- Título da página -->
+    <div class="mb-8">
+      <h1 class="text-3xl font-bold text-foreground mb-2">Dashboard</h1>
+      <p class="text-gray-400">Visão geral do seu negócio</p>
+    </div>
 
-      <!-- Cards de métricas -->
+    <!-- Cards de métricas -->
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-        <!-- Card Pedidos Hoje -->
+        <!-- Card Clientes Hoje -->
         <div class="relative bg-gradient-to-br from-card via-blue-950/10 to-card text-card-foreground rounded-lg border border-blue-800/20 shadow-sm hover:shadow-md hover:shadow-blue-500/10 transition-all duration-300 p-6 group overflow-hidden">
           <!-- Efeito de brilho sutil -->
           <div class="absolute inset-0 bg-gradient-to-r from-transparent via-blue-500/8 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
           <div class="relative z-10 flex items-center justify-between">
             <div>
-              <p class="text-sm text-gray-400 mb-1">Pedidos Hoje</p>
-              <p class="text-2xl font-bold text-foreground">{{ metrics.pedidosHoje }}</p>
+              <p class="text-sm text-gray-400 mb-1">Clientes Hoje</p>
+              <p class="text-2xl font-bold text-foreground">{{ metrics.clientesHoje }}</p>
               <p class="text-xs text-green-600 mt-1">+12% desde ontem</p>
             </div>
             <div class="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-lg flex items-center justify-center shadow-lg">
@@ -82,17 +81,16 @@
         </div>
       </div>
 
-      <!-- Gráficos -->
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
-        <!-- Gráfico de Performance Circular -->
-        <CircularProgress />
+    <!-- Gráficos -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+      <!-- Gráfico de Performance Circular -->
+      <CircularProgress />
 
-        <!-- Gráfico de Vendas Mensais -->
-        <div class="bg-card text-card-foreground rounded-lg border border-border shadow-sm p-6">
-          <h3 class="text-lg font-semibold text-foreground mb-4">Vendas dos Últimos Meses</h3>
-          <div class="relative h-64">
-            <canvas ref="lineChartRef"></canvas>
-          </div>
+      <!-- Gráfico de Vendas Mensais -->
+      <div class="bg-card text-card-foreground rounded-lg border border-border shadow-sm p-6">
+        <h3 class="text-lg font-semibold text-foreground mb-4">Vendas dos Últimos Meses</h3>
+        <div class="relative h-64">
+          <canvas ref="lineChartRef"></canvas>
         </div>
       </div>
     </div>
@@ -109,7 +107,7 @@ const lineChartRef = ref<HTMLCanvasElement | null>(null)
 
 // Dados de exemplo para as métricas
 const metrics = ref({
-  pedidosHoje: 24,
+  clientesHoje: 24,
   clientesNovos: 8,
   retornoClientes: 85,
   faturamento: 3250

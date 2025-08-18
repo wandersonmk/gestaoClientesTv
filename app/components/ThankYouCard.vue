@@ -44,7 +44,7 @@
       <!-- Logo ou marca -->
       <div class="mt-8 pt-6 border-t border-border">
         <p class="text-sm font-semibold text-foreground">
-          Agzap Gestão de pedidos
+          Agzap Gestão de Clientes
         </p>
         <p class="text-xs text-gray-400 mt-1">
           © 2025 Agzap - Todos os direitos reservados

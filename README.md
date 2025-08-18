@@ -1,4 +1,4 @@
-# Nuxt Minimal Starter
+# Agzap - Gestão de Clientes
 
 ## Ambiente (.env)
 

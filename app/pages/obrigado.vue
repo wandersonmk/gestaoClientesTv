@@ -6,7 +6,7 @@
 useHead({
   title: 'Obrigado - Agzap',
   meta: [
-    { name: 'description', content: 'Obrigado por se cadastrar no Agzap Gestão de pedidos' }
+    { name: 'description', content: 'Obrigado por se cadastrar no Agzap Gestão de Clientes' }
   ]
 })
 
