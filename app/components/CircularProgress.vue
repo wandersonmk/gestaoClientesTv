@@ -1,6 +1,6 @@
 <template>
   <div class="bg-card text-card-foreground rounded-lg border border-border shadow-sm p-6">
-    <h3 class="text-lg font-semibold text-foreground mb-6">Clientes Mensais</h3>
+    <h3 class="text-lg font-semibold text-foreground mb-6">Limite de Clientes</h3>
     
     <!-- Gráfico Circular Principal -->
     <div class="flex flex-col items-center mb-8">
@@ -54,7 +54,7 @@
     <!-- Barra de Progresso Mensal -->
     <div>
       <div class="flex justify-between text-sm mb-2">
-        <span class="text-gray-400 uppercase tracking-wide">Limite Mensal</span>
+        <span class="text-gray-400 uppercase tracking-wide">LIMITE</span>
         <span class="text-foreground font-medium">{{ monthlyUsed }}/{{ monthlyLimit }}</span>
       </div>
       <div class="relative h-3 bg-muted rounded-full overflow-hidden">
@@ -69,7 +69,7 @@
         ></div>
       </div>
       <div class="flex justify-center text-xs text-gray-400 mt-2">
-        <span>O seu plano permite {{ monthlyLimit }} clientes/mês</span>
+        <span>O seu plano permite {{ monthlyLimit }} clientes</span>
       </div>
     </div>
   </div>

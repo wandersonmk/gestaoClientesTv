@@ -1,11 +1,5 @@
 <template>
   <div class="max-w-7xl mx-auto">
-    <!-- Título da página -->
-    <div class="mb-8">
-      <h1 class="text-3xl font-bold text-foreground mb-2">Dashboard</h1>
-      <p class="text-gray-400">Visão geral do seu negócio</p>
-    </div>
-
     <!-- Cards de métricas -->
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
         <!-- Card Clientes Hoje -->
@@ -44,19 +38,19 @@
           </div>
         </div>
 
-        <!-- Card Retorno de Clientes -->
+        <!-- Card Clientes Vencendo -->
         <div class="relative bg-gradient-to-br from-card via-amber-950/10 to-card text-card-foreground rounded-lg border border-amber-800/20 shadow-sm hover:shadow-md hover:shadow-amber-500/10 transition-all duration-300 p-6 group overflow-hidden">
           <!-- Efeito de brilho sutil -->
           <div class="absolute inset-0 bg-gradient-to-r from-transparent via-amber-500/8 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
           <div class="relative z-10 flex items-center justify-between">
             <div>
-              <p class="text-sm text-gray-400 mb-1">Retorno de Clientes</p>
-              <p class="text-2xl font-bold text-foreground">{{ metrics.retornoClientes }}%</p>
-              <p class="text-xs text-yellow-600 mt-1">+3% este mês</p>
+              <p class="text-sm text-gray-400 mb-1">Clientes Vencendo</p>
+              <p class="text-2xl font-bold text-foreground">{{ metrics.clientesVencendo }}</p>
+              <p class="text-xs text-yellow-600 mt-1">próximos 5 dias</p>
             </div>
             <div class="w-12 h-12 bg-gradient-to-br from-amber-500 to-amber-600 rounded-lg flex items-center justify-center shadow-lg">
               <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"/>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
               </svg>
             </div>
           </div>
@@ -109,7 +103,7 @@ const lineChartRef = ref<HTMLCanvasElement | null>(null)
 const metrics = ref({
   clientesHoje: 24,
   clientesNovos: 8,
-  retornoClientes: 85,
+  clientesVencendo: 12,
   faturamento: 3250
 })
 

@@ -10,7 +10,7 @@ export default defineNuxtConfig({
   tailwindcss: {
     cssPath: resolvePath(__dirname, 'assets/css/tailwind.css')
   },
-  css: [],
+  css: ['@fortawesome/fontawesome-svg-core/styles.css'],
   runtimeConfig: {
     public: {
       supabaseUrl:
